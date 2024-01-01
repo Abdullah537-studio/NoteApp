@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_to_do_list/views/notes_view.dart';
 
 void main(List<String> args) {
   runApp(const MaterialApp(
@@ -11,7 +12,7 @@ class NotesApp extends StatelessWidget {
   const NotesApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const NotesView();
   }
 }
 // to install git
