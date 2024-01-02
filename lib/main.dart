@@ -5,7 +5,7 @@ void main(List<String> args) {
   runApp(MaterialApp(
     theme: ThemeData.dark(),
     debugShowCheckedModeBanner: false,
-    home: NotesView(),
+    home: const NotesView(),
   ));
 }
 
