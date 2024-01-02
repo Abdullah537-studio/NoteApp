@@ -10,12 +10,16 @@ class NotesListview extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemBuilder: (context, index) => NoteItem(
-        // لتكرار ال list السابقة
-        ColorCard: data[index % data.length],
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      child: ListView.builder(
+        padding: EdgeInsets.zero,
+        itemBuilder: (context, index) => NoteItem(
+          // لتكرار ال list السابقة
+          ColorCard: data[index % data.length],
+        ),
+        itemCount: 6,
       ),
-      itemCount: 6,
     );
   }
 }
