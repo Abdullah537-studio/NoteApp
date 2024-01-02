@@ -13,12 +13,12 @@ class NotesViewBodey extends StatelessWidget {
         children: [
           SizedBox(height: 20),
           CustomAppBar(),
-          // نحنا مستعملين Column  وهو Expanded على محور ال y أي ارتفاع الشاشة
-          // وال listview بتاخد مساحةولادها
-          // استعملنا Expanded مشان ال listview تاخد المساحة المتاحة ليها  Expanded _ flex
           Expanded(child: NotesListview())
         ],
       ),
     );
   }
 }
+// نحنا مستعملين Column  وهو Expanded على محور ال y أي ارتفاع الشاشة
+// وال listview بتاخد مساحةولادها
+// استعملنا Expanded مشان ال listview تاخد المساحة المتاحة ليها  Expanded _ flex

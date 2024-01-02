@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 
 class NoteItem extends StatelessWidget {
-  const NoteItem({super.key});
+  final Color ColorCard;
+
+  const NoteItem({super.key, required this.ColorCard});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 8),
+      margin: const EdgeInsets.only(bottom: 9, left: 9, right: 9),
       padding: const EdgeInsets.only(top: 20, bottom: 20, left: 20),
       decoration: BoxDecoration(
-          color: const Color(0xFFF9CE7D),
-          borderRadius: BorderRadius.circular(20)),
+          color: ColorCard, borderRadius: BorderRadius.circular(20)),
       child: Column(
         children: [
           ListTile(
@@ -31,6 +32,7 @@ class NoteItem extends StatelessWidget {
               ),
             ),
             trailing: IconButton(
+              splashColor: Colors.blueGrey,
               onPressed: () {},
               icon: const Icon(
                 Icons.delete,
