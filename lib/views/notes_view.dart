@@ -13,6 +13,8 @@ class NotesView extends StatelessWidget {
         shape: const CircleBorder(),
         onPressed: () {
           showModalBottomSheet(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
             context: context,
             builder: (context) => AddNoteButtomSheet(),
           );
