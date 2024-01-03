@@ -44,7 +44,7 @@ class NoteItem extends StatelessWidget {
           Row(
             children: [
               const SizedBox(
-                width: 260,
+                width: 200,
               ),
               Text(
                 "May21,2023",
