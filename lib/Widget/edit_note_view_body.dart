@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_to_do_list/Widget/custom_text_field.dart';
+import 'package:flutter_to_do_list/Widget/Add_note_buttom_sheet.dart';
+import 'package:flutter_to_do_list/Widget/custom_appBar.dart';
 
 class EditViewNoteBody extends StatelessWidget {
   const EditViewNoteBody({super.key});
@@ -7,22 +8,13 @@ class EditViewNoteBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.all(8.0),
+      padding: EdgeInsets.symmetric(horizontal: 10),
       child: Column(
         children: [
-          SizedBox(height: 54),
-          Row(
-            children: [Text("Edit Note"), Spacer(), Icon(Icons.search)],
-          ),
-          SizedBox(height: 54),
-          CustomTextField(
-            hint: "Text",
-          ),
-          SizedBox(height: 19),
-          CustomTextField(
-            hint: "content",
-            maxLines: 5,
-          ),
+          SizedBox(height: 10),
+          CustomAppBar(icon: Icon(Icons.check), title: "Edit Note"),
+          SizedBox(height: 32),
+          AddNoteButtomSheet()
         ],
       ),
     );
