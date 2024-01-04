@@ -5,8 +5,8 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 void main(List<String> args) async {
   // انتبه انك تعمل __ import hive ( dart ) __
-  await Hive.openBox(kNoteBox);
   await Hive.initFlutter();
+  await Hive.openBox(kNoteBox);
   runApp(MaterialApp(
     theme: ThemeData.dark(),
     debugShowCheckedModeBanner: false,
