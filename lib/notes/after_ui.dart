@@ -10,3 +10,10 @@
 // بس لازم يكون عندك التنتين موجودين 
 // build_runner : هي بحطها بال dev_dependinces هي بتعمل generate code وانا بدي 
 // generate code ل flutter لهيك أنا بستعمل hive_generator
+// هلق بدي ما أنشأت ال model بدي أعمل generate type adapter بصفحة note_model 
+// بعدين لازم Init Hive  يعني بروح على main.dart وأعمل initialais  ل hive
+  // انتبه انك تعمل __ import hive ( dart ) __
+  // بتحط بال main  >>    async   {} >> 
+  // await Hive.initFlutter();
+  // بعدين   await Hive.openBox(kNoteBox); حيث KNoteBox هي String حطيتها بملف constent 
+// هلق تقريبا خلصناها بقيان بس save بيانات , view بيانات 
