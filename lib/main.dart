@@ -4,7 +4,7 @@ import 'package:flutter_to_do_list/views/notes_view.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 void main(List<String> args) async {
-  // انتبه انك تعمل __ import hive ( dart ) __
+  // انتبه انك تعمل __ import hive ( dart ) __ لازم نستدعي  hive_flutter
   await Hive.initFlutter();
   await Hive.openBox(kNoteBox);
   runApp(MaterialApp(
