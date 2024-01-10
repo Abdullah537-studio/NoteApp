@@ -17,3 +17,9 @@
   // await Hive.initFlutter();
   // بعدين   await Hive.openBox(kNoteBox); حيث KNoteBox هي String حطيتها بملف constent 
 // هلق تقريبا خلصناها بقيان بس save بيانات , view بيانات 
+// بمرحلة انشاء الل cubit يوجد 5 خطوات : 
+// 1_ انشاء ال state
+// 2_ انشاء ال cubit
+// 3_ provide cubit
+// 4_ ببدأ باستخدامو 
+// 5_
