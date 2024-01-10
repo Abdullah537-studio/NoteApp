@@ -8,6 +8,7 @@ part 'add_note_state.dart';
 
 class AddNoteCubit extends Cubit<AddNoteState> {
   AddNoteCubit() : super(AddNoteInitial());
+  bool isLoading = false;
   addNote(NoteModels note) async {
     emit(AddNoteLoading());
     // هون محطوط ال type dynamic ومعرفو بحرف يلي هو E مشان تبدلو بال model يلي عندك
