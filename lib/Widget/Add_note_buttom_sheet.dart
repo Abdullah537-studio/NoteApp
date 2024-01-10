@@ -16,27 +16,22 @@ class _AddNoteButtomSheetState extends State<AddNoteButtomSheet> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => AddNoteCubit(),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 36),
-        child: BlocConsumer<AddNoteCubit, AddNoteState>(
-          listener: (context, state) {
-            if (state is AddNoteFailure) {
-              // استعمل هون package  مشان تعرض رسالة انو في خطأ
-              print("faild ${state.erroreMessage}");
-            }
-            if (state is AddNoteSuccess) {
-              Navigator.pop(context);
-            }
-          },
-          builder: (context, state) {
-            //هلق بنستدعي    modal_progress_hud_nsn  package
-
-            return ModalProgressHUD(
-                //بدي حدد هو loading ولا لأ حسب ال state
-                inAsyncCall: state is AddNoteLoading ? true : false,
-                child: AddNoteForm());
-          },
-        ),
+      child: BlocConsumer<AddNoteCubit, AddNoteState>(
+        listener: (context, state) {
+          if (state is AddNoteFailure) {
+            // استعمل هون package  مشان تعرض رسالة انو في خطأ
+            print("faild ${state.erroreMessage}");
+          }
+          if (state is AddNoteSuccess) {
+            Navigator.pop(context);
+          }
+        },
+        builder: (context, state) {
+          return AbsorbPointer(
+              // لو ب true  مافيك تكبس عشي بالشاشة
+              absorbing: state is AddNoteLoading ? true : false,
+              child: AddNoteForm());
+        },
       ),
     );
   }

@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_to_do_list/Widget/Constants.dart';
 
 class CustomTextBottonSheet extends StatelessWidget {
-  const CustomTextBottonSheet({super.key, this.ontap});
+  const CustomTextBottonSheet({super.key, this.ontap, this.isLoading = false});
   final Function()? ontap;
+  final bool isLoading;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -16,11 +18,15 @@ class CustomTextBottonSheet extends StatelessWidget {
         decoration: BoxDecoration(
             color: kPrimaryColor, borderRadius: BorderRadius.circular(8)),
 
-        child: const Center(
-          child: Text(
-            "Add",
-            style: TextStyle(color: Colors.black, fontSize: 20),
-          ),
+        child: Center(
+          child: isLoading
+              ? const CircularProgressIndicator(
+                  color: Colors.black,
+                )
+              : const Text(
+                  "Add",
+                  style: TextStyle(color: Colors.black, fontSize: 20),
+                ),
         ),
       ),
     );
