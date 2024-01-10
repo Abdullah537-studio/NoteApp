@@ -12,8 +12,9 @@ void main(List<String> args) async {
   Bloc.observer = SimpleBlocObserver();
   // انتبه انك تعمل __ import hive ( dart ) __ لازم نستدعي  hive_flutter
   await Hive.initFlutter();
-  await Hive.openBox(kNoteBox);
   Hive.registerAdapter(NoteModelsAdapter());
+  // انتبه على الترتيب ال registerAdapter قبل ال openBox
+  await Hive.openBox<NoteModels>(kNoteBox);
   runApp(myApp());
 }
 
@@ -22,16 +23,18 @@ class myApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
+    return
+        /* MultiBlocProvider(
       providers: [
         // بما أنو لح استعمكلو بشاشة وحدة فقط
         BlocProvider(create: (context) => AddNoteCubit()),
       ],
-      child: MaterialApp(
-        theme: ThemeData.dark(),
-        debugShowCheckedModeBanner: false,
-        home: const NotesView(),
-      ),
+      child:  */
+        MaterialApp(
+      theme: ThemeData.dark(),
+      debugShowCheckedModeBanner: false,
+      home: const NotesView(),
+      //),
     );
   }
 }
