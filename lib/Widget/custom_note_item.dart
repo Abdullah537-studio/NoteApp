@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_to_do_list/models/note_model.dart';
 
 class NoteItem extends StatelessWidget {
-  final Color ColorCard;
+  final Color colorCard;
+  final NoteModels noteModels;
 
-  const NoteItem({super.key, required this.ColorCard});
+  const NoteItem({
+    super.key,
+    required this.colorCard,
+    required this.noteModels,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -11,24 +17,28 @@ class NoteItem extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 9, left: 9, right: 9),
       padding: const EdgeInsets.only(top: 20, bottom: 20, left: 20),
       decoration: BoxDecoration(
-          color: ColorCard, borderRadius: BorderRadius.circular(20)),
+        color: colorCard,
+        borderRadius: BorderRadius.circular(20),
+      ),
       child: Column(
         children: [
           ListTile(
             minVerticalPadding: 0,
-            title: const Padding(
-              padding: EdgeInsets.only(top: 8),
+            title: Padding(
+              padding: const EdgeInsets.only(top: 8),
               child: Text(
-                "Flutter Tips",
-                style: TextStyle(color: Colors.black, fontSize: 22),
+                noteModels.title,
+                style: const TextStyle(color: Colors.black, fontSize: 22),
               ),
             ),
             subtitle: Padding(
               padding: const EdgeInsets.only(bottom: 16, top: 16),
               child: Text(
-                "Build your career with tharwat sami ",
+                noteModels.subtitle,
                 style: TextStyle(
-                    color: Colors.black.withOpacity(0.5), fontSize: 18),
+                  color: Colors.black.withOpacity(0.5),
+                  fontSize: 18,
+                ),
               ),
             ),
             trailing: IconButton(
@@ -47,7 +57,7 @@ class NoteItem extends StatelessWidget {
                 width: 200,
               ),
               Text(
-                "May21,2023",
+                noteModels.date.toString(),
                 style: TextStyle(
                   fontSize: 14,
                   color: Colors.black.withOpacity(0.5),

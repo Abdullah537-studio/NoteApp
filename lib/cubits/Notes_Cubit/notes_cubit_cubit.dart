@@ -7,13 +7,13 @@ import 'package:meta/meta.dart';
 part 'notes_cubit_state.dart';
 
 class NotesCubitCubit extends Cubit<NotesCubitState> {
-  NotesCubitCubit() : super(NotesCubitInitial());
-  fetchAllNotes() {
-    try {
-      var notebox = Hive.box<NoteModels>(kNoteBox);
-      emit(NotesSuccessState(notes: notebox.values.toList()));
-    } catch (e) {
-      emit(NotesFailureState(erroreMassage: e.toString()));
-    }
+  NotesCubitCubit() : super(NotesCubitInitial()) {
+    fetchAllNotes();
+  }
+
+  fetchAllNotes() async {
+    var notebox = await Hive.openBox<NoteModels>(kNoteBox);
+    List<NoteModels> notes = notebox.values.toList();
+    emit(NotesSuccessState(notes: notes));
   }
 }

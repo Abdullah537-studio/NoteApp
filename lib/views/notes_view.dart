@@ -6,7 +6,7 @@ import 'package:flutter_to_do_list/Widget/notes_view_body.dart';
 import 'package:flutter_to_do_list/cubits/Notes_Cubit/notes_cubit_cubit.dart';
 
 class NotesView extends StatelessWidget {
-  const NotesView({super.key});
+  const NotesView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
