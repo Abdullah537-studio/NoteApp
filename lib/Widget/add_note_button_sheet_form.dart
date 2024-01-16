@@ -21,8 +21,15 @@ class _AddNoteFormState extends State<AddNoteForm> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      physics: const BouncingScrollPhysics(),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 36),
+        padding: EdgeInsets.only(
+          top: 32,
+          //مشان الكيبورد ما يغطي ع الحقول
+          bottom: MediaQuery.of(context).viewInsets.bottom,
+          left: 16,
+          right: 16,
+        ),
         child: Form(
           key: formKey,
           child: Column(

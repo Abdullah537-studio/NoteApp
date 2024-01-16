@@ -13,7 +13,7 @@ class CustomTextBottonSheet extends StatelessWidget {
       child: Container(
         // عرض الشاشة الخاصلا بالجوال
         width: MediaQuery.of(context).size.width,
-        margin: const EdgeInsets.only(top: 30, left: 12, right: 12),
+        margin: const EdgeInsets.only(top: 30, left: 12, right: 12, bottom: 16),
         height: 35,
         decoration: BoxDecoration(
             color: kPrimaryColor, borderRadius: BorderRadius.circular(8)),
